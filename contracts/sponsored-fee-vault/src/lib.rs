@@ -172,3 +172,16 @@ mod tests {
         assert!(client.try_register_agent(&rando, &agent, &100).is_err());
     }
 }
+
+    /// Withdraw XLM from vault (admin only).
+    pub fn withdraw(env: Env, caller: Address, asset: Address, amount: i128) -> Result<(), Error> {
+        caller.require_auth();
+        let admin: Address = env.storage().instance().get(&DataKey::Admin).unwrap();
+        if caller != admin { return Err(Error::Unauthorized); }
+        let balance: i128 = env.storage().instance().get(&DataKey::Balance).unwrap_or(0);
+        if amount > balance { return Err(Error::InsufficientFunds); }
+        let token_client = token::Client::new(&env, &asset);
+        token_client.transfer(&env.current_contract_address(), &caller, &amount);
+        env.storage().instance().set(&DataKey::Balance, &(balance - amount));
+        Ok(())
+    }
