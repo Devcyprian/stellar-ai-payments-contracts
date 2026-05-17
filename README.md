@@ -52,3 +52,12 @@ Stores XLM for fee sponsorship. Admin registers agents with per-tx allowances.
 
 ### PaymentRouter
 Routes a single payment to multiple destinations using basis-point splits (must sum to 10000).
+
+## Deploy to Testnet
+
+```bash
+stellar contract deploy \
+  --wasm target/wasm32-unknown-unknown/release/agent_escrow.wasm \
+  --source ADMIN_SECRET \
+  --network testnet
+```
