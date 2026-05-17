@@ -194,3 +194,5 @@ mod tests {
     }
 
 // Future: track registered agent count for admin dashboard
+
+pub const MIN_DEPOSIT: i128 = 1_000_000; // 0.1 XLM in stroops
