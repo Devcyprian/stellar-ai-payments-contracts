@@ -228,3 +228,8 @@ mod tests {
 // pub fn transfer_admin(env: Env, current_admin: Address, new_admin: Address) { ... }
 
 // TODO: emit Soroban events on deposit/release/refund for indexers
+
+    /// Get the current admin address.
+    pub fn get_admin(env: Env) -> Option<Address> {
+        env.storage().instance().get(&DataKey::Admin)
+    }
