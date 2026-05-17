@@ -1,3 +1,5 @@
+![CI](https://github.com/Devcyprian/stellar-ai-payments-contracts/actions/workflows/ci.yml/badge.svg)
+
 # stellar-ai-payments-contracts
 
 Rust/Soroban smart contracts for AI agent payments on Stellar.
