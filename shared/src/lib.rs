@@ -36,3 +36,16 @@ pub enum Error {
     InsufficientFunds = 5,
     InvalidAmount = 6,
 }
+
+impl core::fmt::Display for Error {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        match self {
+            Error::NotFound => write!(f, "not found"),
+            Error::Unauthorized => write!(f, "unauthorized"),
+            Error::AlreadyExists => write!(f, "already exists"),
+            Error::Expired => write!(f, "expired"),
+            Error::InsufficientFunds => write!(f, "insufficient funds"),
+            Error::InvalidAmount => write!(f, "invalid amount"),
+        }
+    }
+}
