@@ -190,3 +190,12 @@ mod tests {
     }
 
 pub const TOTAL_BPS: u32 = 10_000;
+
+    /// Clear all routes (admin only).
+    pub fn clear_routes(env: Env, caller: Address) -> Result<(), Error> {
+        caller.require_auth();
+        let admin: Address = env.storage().instance().get(&DataKey::Admin).unwrap();
+        if caller != admin { return Err(Error::Unauthorized); }
+        env.storage().instance().remove(&DataKey::Routes);
+        Ok(())
+    }
