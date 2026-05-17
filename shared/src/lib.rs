@@ -59,3 +59,5 @@ pub fn is_expired(record: &PaymentRecord, now: u64) -> bool {
 pub fn count_by_status(records: &[PaymentRecord], status: &PaymentStatus) -> usize {
     records.iter().filter(|r| &r.status == status).count()
 }
+
+pub const CONTRACT_VERSION: &str = "0.1.0";
