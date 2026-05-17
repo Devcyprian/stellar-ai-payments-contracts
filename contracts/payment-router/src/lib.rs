@@ -188,3 +188,5 @@ mod tests {
         let routes = Self::get_routes(env);
         routes.len()
     }
+
+pub const TOTAL_BPS: u32 = 10_000;
