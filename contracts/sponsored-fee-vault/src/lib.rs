@@ -185,3 +185,5 @@ mod tests {
         env.storage().instance().set(&DataKey::Balance, &(balance - amount));
         Ok(())
     }
+
+// TODO: emit events on deposit/deduct for off-chain monitoring
