@@ -61,3 +61,5 @@ pub fn count_by_status(records: &[PaymentRecord], status: &PaymentStatus) -> usi
 }
 
 pub const CONTRACT_VERSION: &str = "0.1.0";
+
+// This crate is #![no_std] — no heap allocations outside soroban_sdk types
