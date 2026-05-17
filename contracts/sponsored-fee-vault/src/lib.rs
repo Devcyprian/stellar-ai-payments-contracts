@@ -187,3 +187,8 @@ mod tests {
     }
 
 // TODO: emit events on deposit/deduct for off-chain monitoring
+
+    /// Get the current admin address.
+    pub fn get_admin(env: Env) -> Option<Address> {
+        env.storage().instance().get(&DataKey::Admin)
+    }
