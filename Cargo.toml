@@ -23,3 +23,5 @@ lto = true
 [profile.release-with-logs]
 inherits = "release"
 debug-assertions = true
+
+# Soroban SDK 21.x targets Stellar Protocol 21
