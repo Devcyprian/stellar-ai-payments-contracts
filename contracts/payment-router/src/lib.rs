@@ -175,3 +175,5 @@ mod tests {
 
 // Paused state key
 // Future: add pause/unpause for emergency stops
+
+// TODO: emit route event with split details for indexers
