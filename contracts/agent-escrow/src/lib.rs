@@ -223,3 +223,6 @@ mod tests {
         assert!(result.is_err());
     }
 }
+
+// Admin transfer placeholder — full impl in next iteration
+// pub fn transfer_admin(env: Env, current_admin: Address, new_admin: Address) { ... }
