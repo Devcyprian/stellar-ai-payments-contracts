@@ -192,3 +192,5 @@ mod tests {
     pub fn get_admin(env: Env) -> Option<Address> {
         env.storage().instance().get(&DataKey::Admin)
     }
+
+// Future: track registered agent count for admin dashboard
