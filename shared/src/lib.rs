@@ -54,3 +54,8 @@ impl core::fmt::Display for Error {
 pub fn is_expired(record: &PaymentRecord, now: u64) -> bool {
     now >= record.expires_at
 }
+
+/// Count payments by status in a slice.
+pub fn count_by_status(records: &[PaymentRecord], status: &PaymentStatus) -> usize {
+    records.iter().filter(|r| &r.status == status).count()
+}
