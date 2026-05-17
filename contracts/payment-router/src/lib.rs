@@ -172,3 +172,6 @@ mod tests {
         assert!(client.try_route(&sender, &asset, &0).is_err());
     }
 }
+
+// Paused state key
+// Future: add pause/unpause for emergency stops
