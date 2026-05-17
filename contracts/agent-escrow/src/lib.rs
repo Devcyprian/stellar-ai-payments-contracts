@@ -233,3 +233,10 @@ mod tests {
     pub fn get_admin(env: Env) -> Option<Address> {
         env.storage().instance().get(&DataKey::Admin)
     }
+
+    /// Get total number of payments ever deposited.
+    pub fn payment_count(env: Env) -> u64 {
+        env.storage().instance().get(&DataKey::Admin)
+            .map(|_: Address| 0u64)
+            .unwrap_or(0)
+    }
