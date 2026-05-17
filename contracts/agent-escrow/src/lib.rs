@@ -240,3 +240,5 @@ mod tests {
             .map(|_: Address| 0u64)
             .unwrap_or(0)
     }
+
+// Future: partial_release(id, amount) for streaming payments
