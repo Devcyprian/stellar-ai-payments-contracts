@@ -2,7 +2,7 @@
 name: Stellar Wave Task
 about: Task template for Stellar Wave 5 contributions
 title: '[WAVE] '
-labels: wave5
+labels: wave5, soroban
 assignees: ''
 ---
 
