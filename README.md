@@ -71,3 +71,11 @@ stellar contract deploy \
 | AgentEscrow | TBD after deploy |
 | SponsoredFeeVault | TBD after deploy |
 | PaymentRouter | TBD after deploy |
+
+## Testing
+
+```bash
+cargo test --all -- --nocapture
+```
+
+Each contract has 5+ tests covering happy path and error cases.
