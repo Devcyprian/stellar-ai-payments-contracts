@@ -65,3 +65,9 @@ pub const CONTRACT_VERSION: &str = "0.1.0";
 // This crate is #![no_std] — no heap allocations outside soroban_sdk types
 
 // Future: add PaymentRecordBuilder for ergonomic construction
+
+impl From<Error> for u32 {
+    fn from(e: Error) -> u32 {
+        e as u32
+    }
+}
