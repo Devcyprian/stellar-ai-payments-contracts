@@ -61,3 +61,11 @@ stellar contract deploy \
   --source ADMIN_SECRET \
   --network testnet
 ```
+
+## Contract Addresses (Testnet)
+
+| Contract | Address |
+|----------|---------|
+| AgentEscrow | TBD after deploy |
+| SponsoredFeeVault | TBD after deploy |
+| PaymentRouter | TBD after deploy |
