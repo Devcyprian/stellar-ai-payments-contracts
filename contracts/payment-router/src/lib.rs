@@ -182,3 +182,9 @@ mod tests {
     pub fn get_admin(env: Env) -> Option<Address> {
         env.storage().instance().get(&DataKey::Admin)
     }
+
+    /// Get number of configured routes.
+    pub fn route_count(env: Env) -> u32 {
+        let routes = Self::get_routes(env);
+        routes.len()
+    }
