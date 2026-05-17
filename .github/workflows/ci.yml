@@ -9,10 +9,14 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        rust: [stable]
     steps:
       - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@master
         with:
+          toolchain: ${{ matrix.rust }}
           targets: wasm32-unknown-unknown
       - uses: Swatinem/rust-cache@v2
       - name: Lint
@@ -20,6 +24,4 @@ jobs:
       - name: Test
         run: cargo test --all
       - name: Build WASM
-        run: |
-          cargo build --release --target wasm32-unknown-unknown \
-            -p agent-escrow -p sponsored-fee-vault -p payment-router
+        run: cargo build --release --target wasm32-unknown-unknown -p agent-escrow -p sponsored-fee-vault -p payment-router
