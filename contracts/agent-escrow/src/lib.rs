@@ -242,3 +242,6 @@ mod tests {
     }
 
 // Future: partial_release(id, amount) for streaming payments
+
+pub const MIN_TTL_SECONDS: u64 = 60;
+pub const MAX_TTL_SECONDS: u64 = 86_400 * 30; // 30 days
