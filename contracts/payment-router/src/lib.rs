@@ -177,3 +177,8 @@ mod tests {
 // Future: add pause/unpause for emergency stops
 
 // TODO: emit route event with split details for indexers
+
+    /// Get the current admin address.
+    pub fn get_admin(env: Env) -> Option<Address> {
+        env.storage().instance().get(&DataKey::Admin)
+    }
