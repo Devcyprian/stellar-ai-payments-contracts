@@ -49,3 +49,8 @@ impl core::fmt::Display for Error {
         }
     }
 }
+
+/// Returns true if the payment has passed its expiry timestamp.
+pub fn is_expired(record: &PaymentRecord, now: u64) -> bool {
+    now >= record.expires_at
+}
