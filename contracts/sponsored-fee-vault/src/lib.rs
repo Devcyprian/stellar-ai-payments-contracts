@@ -196,3 +196,13 @@ mod tests {
 // Future: track registered agent count for admin dashboard
 
 pub const MIN_DEPOSIT: i128 = 1_000_000; // 0.1 XLM in stroops
+
+    /// Remove an agent from the allowlist (admin only).
+    pub fn deregister_agent(env: Env, caller: Address, agent: Address) -> Result<(), Error> {
+        caller.require_auth();
+        let admin: Address = env.storage().instance().get(&DataKey::Admin).unwrap();
+        if caller != admin { return Err(Error::Unauthorized); }
+        env.storage().persistent().remove(&DataKey::AllowedAgent(agent.clone()));
+        env.storage().persistent().remove(&DataKey::AgentAllowance(agent));
+        Ok(())
+    }
